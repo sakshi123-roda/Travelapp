@@ -65,8 +65,6 @@ class _HomeState extends State<Home> {
                             ),
                             Image.asset(
                               "images/Vectorr.png",
-            
-
                               fit: BoxFit.cover,
                             ),
                           ]),
@@ -121,7 +119,7 @@ class _HomeState extends State<Home> {
                                   child: const Align(
                                       alignment: Alignment.bottomLeft,
                                       child: Text(
-                                       CustomStrings.category,
+                                        CustomStrings.category,
                                         style: TextStyle(
                                             color: Color.fromRGBO(0, 0, 0, 1),
                                             fontFamily: 'Inter',
@@ -136,7 +134,7 @@ class _HomeState extends State<Home> {
                                   ),
                                   onPressed: () {},
                                   child: const Text(
-                                   CustomStrings.see,
+                                    CustomStrings.see,
                                     style: TextStyle(
                                         color: Colors.grey,
                                         fontStyle: FontStyle.normal,
@@ -252,7 +250,10 @@ class _HomeState extends State<Home> {
                                                           width: 170,
                                                           decoration:
                                                               BoxDecoration(
-                                                                borderRadius: BorderRadius.circular(10.0),
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        10.0),
                                                             image:
                                                                 DecorationImage(
                                                               image: AssetImage(
@@ -269,11 +270,8 @@ class _HomeState extends State<Home> {
                                                                           0,
                                                                           0,
                                                                           150)),
-                                                                          Container( 
-                                                     
-                                                            ),
+                                                              Container(),
                                                               Container(
-                                                                
                                                                   child: Text(
                                                                       p.name,
                                                                       style: const TextStyle(
@@ -293,8 +291,10 @@ class _HomeState extends State<Home> {
                                                                         () =>
                                                                             null,
                                                                     icon: const Icon(
-                                                                        FontAwesomeIcons.locationDot),
-                                                                            color: Colors.white,
+                                                                        FontAwesomeIcons
+                                                                            .locationDot),
+                                                                    color: Colors
+                                                                        .white,
                                                                   ),
                                                                   Text(p.Place,
                                                                       style: const TextStyle(
@@ -318,18 +318,26 @@ class _HomeState extends State<Home> {
                                                                         0),
                                                                 child: Row(
                                                                     children: [
-                                                                           RatingBarIndicator(
-                                                                            unratedColor: Colors.white,
-    rating: 4,
-    itemBuilder: (context, index) => const Icon(
-         Icons.star,
-         
-         color: Colors.amber,
-    ),
-    itemCount: 5,
-    itemSize: 20.0,
-    direction: Axis.horizontal,
-),
+                                                                      RatingBarIndicator(
+                                                                        unratedColor:
+                                                                            Colors.white,
+                                                                        rating:
+                                                                            4,
+                                                                        itemBuilder:
+                                                                            (context, index) =>
+                                                                                const Icon(
+                                                                          Icons
+                                                                              .star,
+                                                                          color:
+                                                                              Colors.amber,
+                                                                        ),
+                                                                        itemCount:
+                                                                            5,
+                                                                        itemSize:
+                                                                            20.0,
+                                                                        direction:
+                                                                            Axis.horizontal,
+                                                                      ),
                                                                       Text(p.star,
                                                                           style: const TextStyle(
                                                                               color: Colors.white,
@@ -344,9 +352,8 @@ class _HomeState extends State<Home> {
                                                         Navigator.push(
                                                           context,
                                                           MaterialPageRoute(
-                                                            builder:
-                                                                (context) =>
-                                                                    placedetails(p),
+                                                            builder: (context) =>
+                                                                placedetails(p),
                                                           ),
                                                         );
                                                       },
@@ -369,7 +376,7 @@ class _HomeState extends State<Home> {
                                 child: const Align(
                                     alignment: Alignment.bottomLeft,
                                     child: Text(
-                                    CustomStrings.package,
+                                      CustomStrings.package,
                                       style: TextStyle(
                                           color: Color.fromRGBO(0, 0, 0, 1),
                                           fontFamily: 'Inter',
@@ -383,7 +390,7 @@ class _HomeState extends State<Home> {
                                 ),
                                 onPressed: () {},
                                 child: const Text(
-                                 CustomStrings.see,
+                                  CustomStrings.see,
                                   style: TextStyle(
                                       color: Colors.grey,
                                       fontStyle: FontStyle.normal,
@@ -394,212 +401,205 @@ class _HomeState extends State<Home> {
                             ),
                           ]),
                           Column(children: [
-                        
-                                
+                            ListView.builder(
+                                scrollDirection: Axis.vertical,
+                                shrinkWrap: true,
+                                physics: const NeverScrollableScrollPhysics(),
+                                itemCount: resortList.length,
+                                itemBuilder: (context, index) {
+                                  resort r = resortList[index];
 
-                             ListView.builder(
-                                    scrollDirection: Axis.vertical,
-                                    shrinkWrap: true,
-                                     physics: const NeverScrollableScrollPhysics(),
-                                    itemCount: resortList.length,
-                                    itemBuilder: (context, index) {
-                                      resort r = resortList[index];
-
-                                      return Container(
-                                          width: 200,
-                                         
-                                          padding: new EdgeInsets.all(8.0),
-                                          child: Card(
-                                              shape: RoundedRectangleBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(20.0),
-                                              ),
-                                            
-                                              child: Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.min,
-                                                  children: [
-                                                    Container(
-                                                     
-                                                      padding: const EdgeInsets.fromLTRB(10, 0, 1, 0),
-                                                      child: Row(
-                                                        children: <Widget>[
-                                                       Container(
-                                                          height: 120,
-                                                          width: 97,
-                                                          decoration:
-                                                              BoxDecoration(
-                                                                borderRadius: BorderRadius.circular(10.0),
-                                                            image:
-                                                                DecorationImage(
-                                                              image: AssetImage(
-                                                                  r.imgUrl),
-                                                              fit: BoxFit.cover,
-                                                            ),
-                                                          ),),
-                                                          Column(children: [
-                                                          Row(
-                                                                children: [
-                                                                  Container(
-                                                                    padding:
-                                                                        const EdgeInsets.fromLTRB(
-                                                                            6,
-                                                                            0,
-                                                                            90,
-                                                                            0),
-                                                                    child: Text(
-                                                                      r.name,
-                                                                      style: const TextStyle(
-                                                                          color: Color.fromRGBO(
-                                                                              0,
-                                                                              0,
-                                                                              0,
-                                                                              1),
-                                                                          fontStyle: FontStyle
-                                                                              .normal,
-                                                                          fontWeight: FontWeight
-                                                                              .w500,
-                                                                          fontFamily:
-                                                                              'Urbanist',
-                                                                          fontSize:
-                                                                              15),
-                                                                    ),
-                                                                  ),
-const SizedBox(width: 6),
-                                                                  Container(
-                                                              
-                                                                    child: Image
-                                                                        .asset(
-                                                                      r.img,
-                                                                    ),
-                                                                  ),
-                                                                
-                                                                ],
-                                                              ),
-                                                            
-                                                            const SizedBox(
-                                                              height: 10,
-                                                            ),
-                                                            Container(
-                                                             padding:
-                                                                        const EdgeInsets.fromLTRB(
-                                                                            6,
-                                                                            0,
-                                                                            180,
-                                                                            0),
-                                                              child: Text(
-                                                                r.rate,
-                                                                style: const TextStyle(
-                                                                    color: Color
-                                                                        .fromARGB(
-                                                                            255,
-                                                                            203,
-                                                                            43,
-                                                                            43),
-                                                                    fontStyle: FontStyle
-                                                                        .normal,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w500,
-                                                                    fontFamily:
-                                                                        'Urbanist',
-                                                                    fontSize:
-                                                                        15),
-                                                              ),
-                                                            ),
-                                                            const SizedBox(
-                                                              height: 10,
-                                                            ),
-                                                            Container(
-                                                           padding:
-                                                                        const EdgeInsets.fromLTRB(
-                                                                            6,
-                                                                            0,
-                                                                            114,
-                                                                            0),
-                                                              child: Row(
-                                                                  children: [
-                                                                  RatingBarIndicator(
-    rating: 4,
-    itemBuilder: (context, index) => const Icon(
-         Icons.star,
-         color: Colors.amber,
-    ),
-    itemCount: 5,
-    itemSize: 20.0,
-    direction: Axis.horizontal,
-),
-                                                                    Text(r.star)
-                                                                  ]),
-                                                            ),
-                                                            const SizedBox(
-                                                              height: 10,
-                                                            ),
-                                                            Container(
-                                                          padding:
-                                                                        const EdgeInsets.fromLTRB(
-                                                                            0,
-                                                                            0,
-                                                                            40,
-                                                                            0),
-                                                              child: Text(
-                                                                r.Description,
-                                                                style: const TextStyle(
-                                                                    color: Color
-                                                                        .fromARGB(
-                                                                            118,
-                                                                            116,
-                                                                            116,
-                                                                            87),
-                                                                    fontStyle:
-                                                                        FontStyle
-                                                                            .normal,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w500,
-                                                                    fontFamily:
-                                                                        'Urbanist',
-                                                                    fontSize:
-                                                                        15),
-                                                              ),
-                                                            ),
-                                                            const SizedBox(
-                                                              height: 5,
-                                                            ),
-                                                            Container(
-                                                                   padding:
-                                                                        const EdgeInsets.fromLTRB(
-                                                                            0,
-                                                                            0,
-                                                                            2,
-                                                                            0),
-                                                              child: Text(
-                                                                r.D,
-                                                                style: const TextStyle(
-                                                                    color: Color
-                                                                        .fromARGB(
-                                                                            118,
-                                                                            116,
-                                                                            116,
-                                                                            87),
-                                                                    fontStyle:
-                                                                        FontStyle
-                                                                            .normal,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w500,
-                                                                    fontFamily:
-                                                                        'Urbanist',
-                                                                    fontSize:
-                                                                        15),
-                                                              ),
-                                                            ),
-                                                          ]),
-                                                        ],
+                                  return Container(
+                                      width: 200,
+                                      padding: new EdgeInsets.all(8.0),
+                                      child: Card(
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(20.0),
+                                          ),
+                                          child: Column(
+                                              mainAxisSize: MainAxisSize.min,
+                                              children: [
+                                                Container(
+                                                  padding:
+                                                      const EdgeInsets.fromLTRB(
+                                                          10, 0, 1, 0),
+                                                  child: Row(
+                                                    children: <Widget>[
+                                                      Container(
+                                                        height: 120,
+                                                        width: 97,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      10.0),
+                                                          image:
+                                                              DecorationImage(
+                                                            image: AssetImage(
+                                                                r.imgUrl),
+                                                            fit: BoxFit.cover,
+                                                          ),
+                                                        ),
                                                       ),
-                                                    )
-                                                  ])));
-                                    })
+                                                      Column(children: [
+                                                        Row(
+                                                          children: [
+                                                            Container(
+                                                              padding:
+                                                                  const EdgeInsets
+                                                                          .fromLTRB(
+                                                                      6,
+                                                                      0,
+                                                                      90,
+                                                                      0),
+                                                              child: Text(
+                                                                r.name,
+                                                                style: const TextStyle(
+                                                                    color: Color
+                                                                        .fromRGBO(
+                                                                            0,
+                                                                            0,
+                                                                            0,
+                                                                            1),
+                                                                    fontStyle:
+                                                                        FontStyle
+                                                                            .normal,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w500,
+                                                                    fontFamily:
+                                                                        'Urbanist',
+                                                                    fontSize:
+                                                                        15),
+                                                              ),
+                                                            ),
+                                                            const SizedBox(
+                                                                width: 6),
+                                                            Container(
+                                                              child:
+                                                                  Image.asset(
+                                                                r.img,
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                        const SizedBox(
+                                                          height: 10,
+                                                        ),
+                                                        Container(
+                                                          padding:
+                                                              const EdgeInsets
+                                                                      .fromLTRB(
+                                                                  6, 0, 180, 0),
+                                                          child: Text(
+                                                            r.rate,
+                                                            style: const TextStyle(
+                                                                color: Color
+                                                                    .fromARGB(
+                                                                        255,
+                                                                        203,
+                                                                        43,
+                                                                        43),
+                                                                fontStyle: FontStyle
+                                                                    .normal,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w500,
+                                                                fontFamily:
+                                                                    'Urbanist',
+                                                                fontSize: 15),
+                                                          ),
+                                                        ),
+                                                        const SizedBox(
+                                                          height: 10,
+                                                        ),
+                                                        Container(
+                                                          padding:
+                                                              const EdgeInsets
+                                                                      .fromLTRB(
+                                                                  6, 0, 114, 0),
+                                                          child: Row(children: [
+                                                            RatingBarIndicator(
+                                                              rating: 4,
+                                                              itemBuilder: (context,
+                                                                      index) =>
+                                                                  const Icon(
+                                                                Icons.star,
+                                                                color: Colors
+                                                                    .amber,
+                                                              ),
+                                                              itemCount: 5,
+                                                              itemSize: 20.0,
+                                                              direction: Axis
+                                                                  .horizontal,
+                                                            ),
+                                                            Text(r.star)
+                                                          ]),
+                                                        ),
+                                                        const SizedBox(
+                                                          height: 10,
+                                                        ),
+                                                        Container(
+                                                          padding:
+                                                              const EdgeInsets
+                                                                      .fromLTRB(
+                                                                  0, 0, 40, 0),
+                                                          child: Text(
+                                                            r.Description,
+                                                            style: const TextStyle(
+                                                                color:
+                                                                    Color.fromARGB(
+                                                                        118,
+                                                                        116,
+                                                                        116,
+                                                                        87),
+                                                                fontStyle:
+                                                                    FontStyle
+                                                                        .normal,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w500,
+                                                                fontFamily:
+                                                                    'Urbanist',
+                                                                fontSize: 15),
+                                                          ),
+                                                        ),
+                                                        const SizedBox(
+                                                          height: 5,
+                                                        ),
+                                                        Container(
+                                                          padding:
+                                                              const EdgeInsets
+                                                                      .fromLTRB(
+                                                                  0, 0, 2, 0),
+                                                          child: Text(
+                                                            r.D,
+                                                            style: const TextStyle(
+                                                                color:
+                                                                    Color.fromARGB(
+                                                                        118,
+                                                                        116,
+                                                                        116,
+                                                                        87),
+                                                                fontStyle:
+                                                                    FontStyle
+                                                                        .normal,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w500,
+                                                                fontFamily:
+                                                                    'Urbanist',
+                                                                fontSize: 15),
+                                                          ),
+                                                        ),
+                                                      ]),
+                                                    ],
+                                                  ),
+                                                )
+                                              ])));
+                                })
                           ])
                         ])
                       ])

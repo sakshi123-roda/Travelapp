@@ -20,5 +20,4 @@ class ColorNotifire with ChangeNotifier {
   get gettabcolor => isDark ? darktabColor : tabColor;
   get gettabwhitecolor => isDark ? darktabwhiteColor : lighttabwhiteColor;
   get getpurplcolor => isDark ? darkpurpulColor : purpulColor;
-
 }
